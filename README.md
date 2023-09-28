@@ -20,3 +20,11 @@ randomly without memory instead of systematically trying them?
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+## Answer
+
+With the way I implemented the program, it first creates a list of every permutation.  Since there are $n!$ permutations of a given list of length $n$, the time complexity for this part is always $n!$.  After that, it checks through each item to see if it is sorted and stops when it finds the sorted list.  On average, this part would have a time complexity of $n/2$.  Therefore, the average case time complexity of this algorithm is $\Theta(n! + n)$.
+
+In the best case, it would find the sorted list on the first try, so the time complexity would be $\Theta(n!)$.  (However, with an empty set, the time complexity is $\Theta(1)$).  In the worst case, it would take n runs to find the sorted list, so the time complexity is $\Theta(n! + n)$
+
+If you generated permutations randomly instead of systematically, you have a $1/n!$ chance of randomly generating the correct list.  On average, it would take n! generations to find the correct list.  Generating each list would have a time complexity of n, since it is directly related to the length of the list.  Therefore, the average time complexity is $\Theta(n*n!)$.  (Information from https://stackoverflow.com/questions/19879556/what-is-the-average-time-complexity-of-bogosort)
