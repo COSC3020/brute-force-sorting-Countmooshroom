@@ -1,6 +1,6 @@
 function permutationSort(a) {
+    if (a.length == 0) { return []; }
     var x = getPerms(a);
-    if (x.length == 0) { return 0; }
     var done = false;
     var i = 0;
     while (!done) {
@@ -8,7 +8,7 @@ function permutationSort(a) {
     }
     console.log("I tried " + i + " permutations to find the sorted list:");
     console.log(x[--i]);
-    return(++i);
+    return(x[i]);
 }
 
 function isSorted(a) {
